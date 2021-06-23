@@ -45,7 +45,7 @@ const useStyle = makeStyles({
     },
     button: {
         marginLeft: 'auto',
-        background: '#2874f0',
+        background: '#00BCD4',
         borderRadius: 2,
         fontSize: 13
     },

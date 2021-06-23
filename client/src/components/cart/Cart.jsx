@@ -26,7 +26,7 @@ const useStyle = makeStyles({
         background: '#fff',
     },
     placeOrder: {
-        background: '#fb641b',
+        background: '#f1828d',
         color: '#fff',
         borderRadius: 2,
         width: 250,

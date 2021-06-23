@@ -13,7 +13,7 @@ const useStyle = makeStyles(theme => ({
         marginLeft: 'auto',
         padding: 5,
         display: 'flex',
-        color: 'blue'
+        color: '#00BCD4'
       },
       inputRoot: {
         fontSize: 'unset',

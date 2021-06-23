@@ -22,12 +22,12 @@ const useStyle = makeStyles({
         borderRadius: 2
     },
     addToCart: {
-        background: '#ff9f00',
+        background: '#f9d423',
         color: '#fff',
         marginRight: 10
     },
     buyNow: {
-        background: '#fb641b',
+        background: '#f1828d',
         color: '#fff'
     }
 })

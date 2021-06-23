@@ -48,9 +48,6 @@ const useStyle = makeStyles ({
 const DetailView = ({match}) => {
     const classes = useStyle();
 
-    const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png'
-    const sellerURL = 'https://rukminim1.flixcart.com/lockin/774/185/images/CCO__PP_2019-07-14.png?q=50'
-
     const {product} = useSelector(state => state.getProductDetails);
 
     const date = new Date(new Date().getTime() + (5*24*60*60*1000));
@@ -72,7 +69,6 @@ const DetailView = ({match}) => {
                         <Typography>{product.title.longTitle}</Typography>
                         <Typography className={clsx(classes.smallText, classes.greyTextColor)}>
                             8 Ratings & 1 Review
-                            <span><img src={fassured} style={{width: 77, marginLeft: 20}}/></span>
                         </Typography>
                         <Typography>
                             <span className={classes.price}>₹{product.price.cost}</span> &nbsp;&nbsp;&nbsp;
@@ -100,15 +96,10 @@ const DetailView = ({match}) => {
                                 <TableRow className={classes.smallText}>
                                     <TableCell className={classes.greyTextColor}>Seller</TableCell>
                                     <TableCell className={classes.smallText}>
-                                        <span style={{color:'#2874f0'}}>SuperComNet</span>
+                                        <span style={{color:'#00BCD4'}}>SuperComNet</span>
                                         <Typography>GST invoice Available</Typography>
                                         <Typography>14 Days Return Policy</Typography>
                                         <Typography>View more sellers starting from ₹300</Typography>
-                                    </TableCell>
-                                </TableRow>
-                                <TableRow>
-                                    <TableCell colSpan={2}>
-                                        <img src={sellerURL} style={{width:390}}/>
                                     </TableCell>
                                 </TableRow>
                                 <TableRow className={classes.smallText}>

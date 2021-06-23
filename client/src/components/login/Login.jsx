@@ -11,7 +11,7 @@ const useStyle = makeStyles({
         backgroundImage: `url(${'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png'})`,
         height: '70vh',
         backgroundRepeat: 'no-repeat',
-        background: '#2874f0',
+        background: '#00BCD4',
         width: '40%',
         backgroundPosition: 'center 85%',
         padding: '45px 35px',
@@ -36,15 +36,16 @@ const useStyle = makeStyles({
     },
     loginB: {
         textTransform: 'none',
-        background: '#fb641b',
+        background: '#f1828d',
         color: '#ffffff',
+        fontWeight: 600,
         height: 48,
         borderRadius: 2
     },
     reqB: {
         textTransform: 'none',
         background: '#ffffff',
-        color: '#2874f0',
+        color: '#00BCD4',
         fontWeight: 550,
         height: 48,
         borderRadius: 2,
@@ -54,7 +55,7 @@ const useStyle = makeStyles({
         textAlign: 'center',
         marginTop: 'auto',
         fontSize: 14,
-        color: '#2874f0',
+        color: '#00BCD4',
         fontWeight: 600,
         cursor: 'pointer' 
     },
@@ -153,11 +154,11 @@ const Login = ({open, setOpen, setAccount}) => {
                             <TextField onChange={(e) => onValueChange(e)} name='username' label='Enter Username/Mobile number' />
                             <TextField onChange={(e) => onValueChange(e)} name='password' label='Enter Password' />
                             {error && <Typography className={classes.error}>Invalid Username or Password</Typography>}
-                            <Typography className={classes.text}>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Typography>
+                            <Typography className={classes.text}>By continuing, you agree to ClickToCart's Terms of Use and Privacy Policy.</Typography>
                             <Button variant="contained" onClick={() => loginUser()} className={classes.loginB }>Login</Button>
                             <Typography className={classes.text} style={{textAlign: 'center'}}>OR</Typography>
                             <Button variant="contained" className={classes.reqB}>Request OTP</Button>
-                            <Typography onClick ={() => toggleUserAccount() } className={classes.createTxt}>New to Flipkart? Create an account</Typography>
+                            <Typography onClick ={() => toggleUserAccount() } className={classes.createTxt}>New to ClickToCart? Create an account</Typography>
                         </Box> :
                         <Box className={classes.login}>
                             <TextField onChange={(e) => onInputChange(e)} name='firstname' label='Enter Firstname' />

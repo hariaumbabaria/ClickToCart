@@ -12,7 +12,7 @@ import Profile from './Profile';
 const useStyle = makeStyles({
     login: {
         background: '#ffffff',
-        color: '#2874f0',
+        color: '#00BCD4',
         textTransform: 'none',
         fontWeight: 600,
         borderRadius: 2,
@@ -30,8 +30,7 @@ const useStyle = makeStyles({
         }
     },
     container: {
-        display: 'flex',
-        
+        display: 'flex'
     }
 })
 
@@ -54,12 +53,12 @@ const HeaderButtons = () => {
                     <Button variant="contained" onClick={() => openLoginDialog()} className = {classes.login}>Login</Button>
                 </Link>
             }
-            <Link><Typography style={{marginTop: 5}}> More </Typography></Link>
+            <Link><Typography style={{marginTop: 5, fontWeight: 600}}> More </Typography></Link>
             <Link to='/cart' className = {classes.container}>
                 <Badge badgeContent={cartItems.length} color="Secondary">
                     <ShoppingCart/>
                 </Badge>
-                <Typography style={{marginLeft: 10}}>Cart</Typography>
+                <Typography style={{marginLeft: 10, fontWeight: 600}}>Cart</Typography>
             </Link>
             <LoginDialog open={open} setOpen={setOpen} setAccount={setAccount}/>
         </Box>

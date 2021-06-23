@@ -24,7 +24,7 @@ const useStyle = makeStyles({
         padding: '12px 70px',
         borderRadius: 2,
         fontSize: 14,
-        background: '#2874f0', 
+        background: '#00BCD4', 
         color: '#fff'
     }
 })
