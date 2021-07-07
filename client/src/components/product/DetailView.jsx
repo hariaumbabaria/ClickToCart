@@ -51,15 +51,16 @@ const useStyle = makeStyles (theme => ({
 const DetailView = ({match}) => {
     const classes = useStyle();
 
-    const {product} = useSelector(state => state.getProductDetails);
+    const {loading, product} = useSelector(state => state.getProductDetails);
 
     const date = new Date(new Date().getTime() + (5*24*60*60*1000));
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getProductDetails(match.params.id));
-    }, [dispatch])
+        if(product && match.params.id !== product.id)   
+            dispatch(getProductDetails(match.params.id));
+    }, [dispatch, product, match, loading]);
 
     return (
         <Box className={classes.component}>
