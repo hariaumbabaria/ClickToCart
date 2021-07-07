@@ -1,5 +1,9 @@
 import SearchIcon from '@material-ui/icons/Search';
-import { makeStyles, InputBase } from '@material-ui/core';
+import { makeStyles, InputBase, List, ListItem } from '@material-ui/core';
+import {useDispatch, useSelector} from 'react-redux';
+import { getProducts as listProducts } from '../../redux/actions/productActions';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const useStyle = makeStyles(theme => ({
     search: {
@@ -22,11 +26,33 @@ const useStyle = makeStyles(theme => ({
       inputInput: {
         paddingLeft: 20,
         width: '100%',
+    },
+    list: {
+      position: 'absolute',
+      color: '#000',
+      background: '#fff',
+      marginTop: 36
     }
 }))
 
 const Search = () => {
     const classes = useStyle();
+
+    const [open, setOpen] = useState(true);
+
+    const[text, setText] = useState();
+    const getText = (text) => {
+      setText(text);
+      setOpen(false);
+    }
+
+    const { products } = useSelector(state => state.getProducts)
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(listProducts())
+    }, [dispatch])
 
     return (
         <div className={classes.search}>
@@ -37,10 +63,29 @@ const Search = () => {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              onChange={(e) => getText(e.target.value)}
             />
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
+            {
+              text && 
+              <List className={classes.list} hidden={open}>
+                {
+                  products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => (
+                    <ListItem>
+                      <Link 
+                          to={`/product/${product.id}`}
+                          style={{textDecoration: 'none', color:'inherit'}}
+                          onClick={() => setOpen(true)}
+                        >
+                        {product.title.longTitle}
+                      </Link>
+                    </ListItem>
+                  ))
+                }
+              </List>
+            }
         </div>
     )
 }

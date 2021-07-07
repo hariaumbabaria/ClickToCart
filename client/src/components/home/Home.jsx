@@ -11,18 +11,27 @@ import {useDispatch, useSelector} from 'react-redux';
 import { useEffect } from 'react';
 import { getProducts as listProducts } from '../../redux/actions/productActions';
 
-const useStyle = makeStyles ({
+const useStyle = makeStyles (theme => ({
     component: {
         padding: 10,
         background: '#f2f2f2'
+    },
+    leftWrapper: {
+        width: '83%',
+        [theme.breakpoints.down('md')] : {
+            width: '100%'
+        }
     },
     rightWrapper: {
         background: '#ffffff',
         padding: 5,
         margin: '12px 0 0 10px', 
-        width: '17%'
+        width: '17%',
+        [theme.breakpoints.down('md')] : {
+            display: 'none'
+        }
     }
-})
+}))
 
 const Home = () => {
     const classes = useStyle();
@@ -42,7 +51,7 @@ const Home = () => {
             <Box className = {classes.component}>
                 <Banner />
                 <Box style={{display: 'flex'}}>
-                    <Box style={{width: '83%'}}>
+                    <Box className={classes.leftWrapper} >
                         <Slide 
                             timer={true}
                             title="Deal of the Day"

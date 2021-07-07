@@ -90,7 +90,6 @@ const Slide = ({ timer, title, products }) => {
                 autoPlaySpeed={10000}
                 keyBoardControl={true}
                 showDots={false}
-                removeArrowOnDeviceType={["tablet", "mobile"]}
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
                 containerClass="carousel-container"
